@@ -1,0 +1,13 @@
+THMIN=1
+THMAX=1
+THIT=2
+
+rm ./D/*
+rm ./V/*
+
+for (( TH=$THMIN; TH<=$THMAX; TH=TH+$THIT )) do
+
+cat ./circle.temp | sed -e s/XXTHMAX/$TH/  > ./circle.in
+./film
+
+done
